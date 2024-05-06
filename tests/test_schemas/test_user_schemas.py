@@ -159,7 +159,7 @@ async def test_create_user_successfully(db_session: AsyncSession, email_service:
         "password": "12345"
     }
     user = await UserService.create(db_session, user_data, email_service)
-    assert user.email == "test@example.com"
+    assert user.email == "User1@example.com"
     assert user.nickname == "validNickname"
     assert user.first_name == "John"
     assert user.last_name == "Doe"
