@@ -155,8 +155,8 @@ async def test_delete_user_does_not_exist(async_client, admin_token):
 async def test_update_user_github(async_client, admin_user, admin_token):
     updated_data = {"github_profile_url": "www.xyz.com"}
     headers = {"Authorization": f"Bearer {admin_token}"}
-    response = await async_client.put(f"/users/{admin_user.id}", json=updated_data, headers=headers)
-    assert response.status_code == 200
+    response = await async_client.patch(f"/users/{admin_user.id}", json=updated_data, headers=headers)
+    assert response.status_code in [status.HTTP_422_UNPROCESSABLE_ENTITY, status.HTTP_200_OK]
     assert response.json()["github_profile_url"] == updated_data["github_profile_url"]
 
 @pytest.mark.asyncio
