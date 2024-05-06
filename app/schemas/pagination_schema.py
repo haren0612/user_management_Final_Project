@@ -33,4 +33,3 @@ class EnhancedPagination(Pagination):
 
     def add_link(self, rel: str, href: str):
         self.links.append(PaginationLink(rel=rel, href=href))
-
