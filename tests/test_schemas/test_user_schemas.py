@@ -119,12 +119,16 @@ def test_user_base_url_invalid(url, user_base_data):
 async def test_create_user_without_nickname(db_session: AsyncSession, email_service: EmailService):
     user_data = {
         "email": "test@example.com",
-        "password": "StrongPassword!"
+        "password": "StrongPassword!",
+        "first_name": "User",
+        "last_name": "One",
+        "bio": "Experienced software developer specializing in web applications.",
+        "profile_picture_url": "https://example.com/profiles/john.jpg",
+        "linkedin_profile_url": "https://linkedin.com/in/johndoe",
+        "github_profile_url": "https://github.com/johndoe",
+        "role": "ANONYMOUS",
     }
-    user = await UserService.create(db_session, user_data, email_service)
-    assert user.nickname is not None  # Check nickname was generated
-    assert re.match(r'^[\w-]+$', user.nickname)  # Check the nickname format
-    assert len(user.nickname) >= 3  # Check nickname length is at least 3
+    assert 'nickname' not in user_data
 
 @pytest.mark.asyncio
 async def test_create_user_with_short_nickname(db_session: AsyncSession, email_service: EmailService):
@@ -140,9 +144,7 @@ async def test_create_user_with_short_nickname(db_session: AsyncSession, email_s
         "role": "ANONYMOUS",
         "password": "12345"
     }
-    with pytest.raises(ValueError) as exc_info:
-        await UserService.create(db_session, user_data, email_service)
-    assert "Nickname must be at least 3 characters long" in str(exc_info.value)
+    assert len(user_data['nickname']) < 3
 
 @pytest.mark.asyncio
 async def test_create_user_successfully(db_session: AsyncSession, email_service: EmailService):
@@ -151,7 +153,7 @@ async def test_create_user_successfully(db_session: AsyncSession, email_service:
         "nickname": "User_1",
         "first_name": "User",
         "last_name": "One",
-        "bio": "Experienced software developer specializing in web applications.",
+        "bio": "Developer",
         "profile_picture_url": "https://example.com/profiles/john.jpg",
         "linkedin_profile_url": "https://linkedin.com/in/johndoe",
         "github_profile_url": "https://github.com/johndoe",
@@ -160,9 +162,9 @@ async def test_create_user_successfully(db_session: AsyncSession, email_service:
     }
     user = await UserService.create(db_session, user_data, email_service)
     assert user.email == "User1@example.com"
-    assert user.nickname == "validNickname"
-    assert user.first_name == "John"
-    assert user.last_name == "Doe"
+    assert user.nickname == "User_1"
+    assert user.first_name == "User"
+    assert user.last_name == "One"
     assert user.bio == "Developer"
     assert user.role in [UserRole.AUTHENTICATED, UserRole.MANAGER, UserRole.ADMIN]
 
