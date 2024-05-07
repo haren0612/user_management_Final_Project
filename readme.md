@@ -5,11 +5,11 @@ Welcome to the User Management System project - an epic open-source adventure cr
 
 The base code is in this link - [here](https://github.com/WISClub/user_management)
 
-Checkout more details - [About the Project](about.md)🔥🌟
+Checkout more details - [About the Project](about.md)
 
-Out of all the provided [Features to Select From](features.md) 🛠️ I have opted to implement the below feature:
+Out of all the provided [Features to Select From](features.md)  I have opted to implement the below feature:
 
-##### 👤 User Profile Management
+#####  User Profile Management
 
 ## Project required details:
 
