@@ -1,7 +1,7 @@
 # The User Management System 
 # Haren Chowdary Doppalapudi | hd337
 
-Welcome to the User Management System project - an epic open-source adventure crafted alongside Professor [Keith Williams](https://github.com/kaw393939)
+Welcome to the User Management System project - an epic open-source adventure crafted alongside Professor [Keith Williams] (https://github.com/kaw393939)
 
 The base code is in this link - [here](https://github.com/WISClub/user_management)
 
