@@ -23,10 +23,10 @@ Below is the list of 7 QA issues that were fixed:
 | [Issue 1](https://github.com/haren0612/user_management_Final_Project/issues/1) | 
 | [Issue 2](https://github.com/haren0612/user_management_Final_Project/issues/3) |
 | [Issue 3](https://github.com/haren0612/user_management_Final_Project/issues/5) |
-| [Issue 5](https://github.com/haren0612/user_management_Final_Project/issues/7) |
-| [Issue 6](https://github.com/haren0612/user_management_Final_Project/issues/9) |
-| [Issue 7](https://github.com/haren0612/user_management_Final_Project/issues/11) |
-| [Issue 8](https://github.com/haren0612/user_management_Final_Project/issues/13) |
+| [Issue 4](https://github.com/haren0612/user_management_Final_Project/issues/7) |
+| [Issue 5](https://github.com/haren0612/user_management_Final_Project/issues/9) |
+| [Issue 6](https://github.com/haren0612/user_management_Final_Project/issues/11) |
+| [Issue 7](https://github.com/haren0612/user_management_Final_Project/issues/13) |
 
 Find all the closed issues: https://github.com/haren0612/user_management_Final_Project/issues?q=is%3Aissue+is%3Aclosed
 
